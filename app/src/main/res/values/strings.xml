@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Entrega_restful</string>
+    <string name="lista_productos">Lista de productos</string>
+    <string name="addExistenciaPlaceholder">Existencia</string>
+    <string name="addPrecioUnitarioPlaceholder">Precio unitario</string>
+    <string name="addCategoriaPlaceholder">Categoria</string>
+    <string name="addDescripcionPlaceholder">Descripcion</string>
+    <string name="updateButtonText">Actualizar</string>
+    <string name="deleteButtonText">Eliminar</string>
+    <string name="createViewTitle">Registro nuevo</string>
+</resources>

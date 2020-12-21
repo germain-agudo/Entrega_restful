@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical"
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:animateLayoutChanges="true"
+        android:elevation="4dp"
+        app:cardBackgroundColor="#ffff"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="id"
+                    android:textSize="10.5dp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="numero de control"
+                    android:textSize="10.5dp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="nombre"
+                    android:textSize="10.5dp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="carrera"
+                    android:textSize="10.5dp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="semestre"
+                    android:textSize="10.5dp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMostrar_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="mostrar_id"
+                    android:textSize="10.5dp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/tvMostrar_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="mostrar_numero_control"
+                    android:textSize="10.5dp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/tvMostrar_categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="mostrar_nombre"
+                    android:textSize="10.5dp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/tvMostrar_precio_unitario"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="mostrar_carrera"
+                    android:textSize="10.5dp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/tvMostrar_existencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:text="mostrar_semestre"
+                    android:textSize="10.5dp"
+                    android:typeface="normal" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

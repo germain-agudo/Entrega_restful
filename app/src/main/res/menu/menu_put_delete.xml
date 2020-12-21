@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/opcion_editar_producto"
+        android:icon="@drawable/escritura"
+        android:title="@string/updateButtonText"
+
+        app:showAsAction="always"
+
+        />
+
+    <item
+        android:id="@+id/opcion_eliminar_producto"
+
+        android:title="@string/deleteButtonText"
+        app:showAsAction="never"
+
+        />
+
+    <item
+        android:id="@+id/opcion_agregar_producto"
+        android:title="@string/createViewTitle"
+        app:showAsAction="never"
+
+        />
+</menu>
