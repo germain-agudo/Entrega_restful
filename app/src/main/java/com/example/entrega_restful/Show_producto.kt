@@ -16,7 +16,7 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONObject
 
 class Show_producto : AppCompatActivity() {
-    val url : String ="https://moviles-restful.000webhostapp.com/producto"
+    val url : String ="http://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
     var lista : RecyclerView?=null
     var layoutManager: RecyclerView.LayoutManager?=null
     var adaptador: Adaptador_custom?=null

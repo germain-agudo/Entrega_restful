@@ -7,18 +7,27 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import com.android.volley.Request
+import com.android.volley.Request.Method.GET
+import com.android.volley.Request.Method.PUT
+import com.android.volley.RequestQueue
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_create_producto.*
 import kotlinx.android.synthetic.main.activity_update_producto.*
+import org.json.JSONException
 import org.json.JSONObject
+import java.io.ObjectOutputStream
+import kotlin.concurrent.thread
+import kotlin.math.sign
 
 class Update_producto : AppCompatActivity() {
     var id : Int = 0
-    val url : String ="https://moviles-restful.000webhostapp.com/producto"
+    val url : String ="http://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
     var jsonObject  = JSONObject();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +38,13 @@ class Update_producto : AppCompatActivity() {
         id = intent.getIntExtra("id",0)
         title = "Producto: $id"
 
-        GET_producto(url,id,this)
+
+
+        if (comprobarConexion()){
+            GET_producto(url,id,this)
+        }
+
+
 
     }
 
@@ -52,6 +67,8 @@ class Update_producto : AppCompatActivity() {
             }
         )
         queque.add(JsonObjectRequest)
+
+
     }
 
 
@@ -96,19 +113,24 @@ class Update_producto : AppCompatActivity() {
 
 
     fun PUT_producto(url: String, id : Int,jsonObject: JSONObject,context: Context) {
+
         val jsonObject = jsonObject
-        val url=url+"/$id"
-        val queque = Volley.newRequestQueue(context)
-        val JsonObjectRequest= JsonObjectRequest(Request.Method.PUT,url,jsonObject
+        val url=url+"/"+id
+        val queque = Volley.newRequestQueue(this)
+        val JsonObjectRequest= JsonObjectRequest( Request.Method.PUT,url,jsonObject
             ,Response.Listener { response ->
                 Log.i("LOG_TAG", "response is $response")
+
                 Toast.makeText(applicationContext, "Producto actualizado", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(applicationContext,Show_producto::class.java))
+
             },
             Response.ErrorListener { error ->
                 error.printStackTrace()
             }
         )
         queque.add(JsonObjectRequest)
+
     }
 
 
@@ -116,60 +138,85 @@ class Update_producto : AppCompatActivity() {
 
      */
     fun btnUpdatePressed(){
+
         if(convertir_jsonobject()){
-
-                if (Network.hayRed(this)){
-                    PUT_producto(url,id,jsonObject,this)
-                    // finish()
-                    startActivity(Intent(applicationContext,Show_producto::class.java))
-                }else{
-                    Toast.makeText(this,"Error de conexion",Toast.LENGTH_SHORT).show()
-                }
+            if (comprobarConexion()){
+                PUT_producto(url,id,jsonObject,this)
+            }
 
 
 
-
-        }else{
+       }else{
 
         }
 
     }
 
 
-    /*
+
+    fun comprobarConexion():Boolean{
+        if (Network.hayRed(this)){
+            return true
+        }else{
+            return true
+            Toast.makeText(this,"Error de conexion",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+     fun DELETE_producto(url: String, id:Int, context: Context) {
+        /* val thread= Thread(Runnable {
+             Thread.sleep(5000)
+         })
+         thread.start()*/
 
 
-     */
 
-
-    fun DELETE_producto(url: String, id:Int,context: Context) {
         val id =id
         val context=context
-        val url =url+"/$id"
-        val queque = Volley.newRequestQueue(context)
-        val JsonObjectRequest= JsonObjectRequest(Request.Method.DELETE,url,null,
+        val url =url
+
+
+           val queque : RequestQueue
+          queque = Volley.newRequestQueue(context)
+        val JsonObjectRequest= JsonObjectRequest(Request.Method.DELETE,url+"/$id",null,
             Response.Listener {response ->
+
                 Toast.makeText(applicationContext, "Producto eliminado", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(applicationContext,Show_producto::class.java))
 
                 Log.i("LOG_TAG", "response is $response")
             },
             Response.ErrorListener { error ->
                 error.printStackTrace()
+                //Log.i("LOG_TAG", "response is "+ error.message)
+                /*Log.i("jsonObjectRequest", "Error, Status Code " + error.networkResponse.statusCode);
+//                Log.i("jsonObjectRequest", "URL: " + error.cause);
+                Log.i("jsonObjectRequest", "Payload: " + error.localizedMessage);
+                Log.i("jsonObjectRequest", "Net Response to String: " + error.networkResponse.toString());
+                Log.i("jsonObjectRequest", "Error bytes: " +(error.networkResponse.data));*/
+
             }
         )
+
+
         queque.add(JsonObjectRequest)
+
     }
 
 
     fun btnDeletePressed(){
 
-            if (Network.hayRed(this)){
-                DELETE_producto(url,id,this)
-                // finish()
-                startActivity(Intent(applicationContext,Show_producto::class.java))
-            }else{
-                Toast.makeText(this,"Error de conexion",Toast.LENGTH_SHORT).show()
-            }
+        if (Network.hayRed(this)){
+
+            DELETE_producto(url,id,this)
+            // finish()
+
+
+        }else{
+            Toast.makeText(this,"Error de conexion",Toast.LENGTH_SHORT).show()
+        }
+
+
 
 
     }
@@ -208,7 +255,6 @@ class Update_producto : AppCompatActivity() {
             else->super.onOptionsItemSelected(item)
         }
     }
-
 
 
 

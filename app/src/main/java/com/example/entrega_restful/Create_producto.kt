@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_create_producto.*
 import org.json.JSONObject
 
 class Create_producto : AppCompatActivity() {
-    val url : String ="https://moviles-restful.000webhostapp.com/producto"
+    val url : String ="http://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
  var jsonObject = JSONObject();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +55,7 @@ class Create_producto : AppCompatActivity() {
             ,Response.Listener { response ->
                 Log.i("LOG_TAG", "response is $response")
                 Toast.makeText(applicationContext, "Producto agregado", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(applicationContext,Show_producto::class.java))
             },
             Response.ErrorListener { error ->
                 error.printStackTrace()
@@ -66,18 +67,11 @@ class Create_producto : AppCompatActivity() {
 
     fun btnCreatePressed(view: View) {
             if (convertir_jsonobject()){
-
-
                     if (Network.hayRed(this)){
                         POST_producto(url,jsonObject,this)
-
-                        startActivity(Intent(this,Show_producto::class.java))
                     }else{
                         Toast.makeText(this,"Error de conexion",Toast.LENGTH_SHORT).show()
                     }
-
-
-
             }
     }
 
