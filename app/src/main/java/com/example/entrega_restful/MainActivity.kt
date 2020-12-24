@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     fun btnMostrar(view: View) {
         startActivity(Intent(applicationContext,Show_producto::class.java))
+        Toast.makeText(this,"Espere pofavor, esto puede tomar algunos minutos", Toast.LENGTH_LONG).show()
     }
 
 

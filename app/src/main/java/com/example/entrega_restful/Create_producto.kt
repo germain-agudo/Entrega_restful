@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_create_producto.*
 import org.json.JSONObject
 
 class Create_producto : AppCompatActivity() {
-    val url : String ="http://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
+    val url : String ="https://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
  var jsonObject = JSONObject();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

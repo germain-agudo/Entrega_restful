@@ -16,7 +16,7 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONObject
 
 class Show_producto : AppCompatActivity() {
-    val url : String ="http://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
+    val url : String ="https://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
     var lista : RecyclerView?=null
     var layoutManager: RecyclerView.LayoutManager?=null
     var adaptador: Adaptador_custom?=null
@@ -24,7 +24,12 @@ class Show_producto : AppCompatActivity() {
          super.onCreate(savedInstanceState)
         setContentView(R.layout.show_producto)
         title = "Productos"
-comprobarConexion()
+
+
+             comprobarConexion()
+
+
+
     }
     fun comprobarConexion(){
         if (Network.hayRed(this)){
@@ -39,7 +44,7 @@ comprobarConexion()
         val queque = Volley.newRequestQueue(context)
            val url=url
         val JsonObjectRequest= JsonObjectRequest(
-            Request.Method.GET,url,null, Response.Listener { response ->
+            url,null, Response.Listener { response ->
                 val json : JSONObject
                 json =response
                 convertir_datos(json)
@@ -73,8 +78,11 @@ comprobarConexion()
 
         fun mostrar_productos(lista_productos: ArrayList<Producto>){
             var lista_productos = lista_productos
+
             lista = findViewById(R.id.lista_productos)
-            lista?.setHasFixedSize(true)
+            //lista?.setHasFixedSize(true)
+
+
             layoutManager= LinearLayoutManager(this)
             adaptador= Adaptador_custom(this, lista_productos!!,object : ClickListener{
                 override fun onClick(vista: View, position: Int) {

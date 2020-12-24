@@ -27,12 +27,12 @@ import kotlin.math.sign
 
 class Update_producto : AppCompatActivity() {
     var id : Int = 0
-    val url : String ="http://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
+    val url : String ="https://app-348c5655-c4f9-4446-905e-2302eee44209.cleverapps.io/productos"
     var jsonObject  = JSONObject();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_producto)
-
+        Toast.makeText(applicationContext, "Cargando...", Toast.LENGTH_SHORT).show()
 
         val intent : Intent = intent
         id = intent.getIntExtra("id",0)
