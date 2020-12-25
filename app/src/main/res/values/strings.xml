@@ -8,4 +8,5 @@
     <string name="updateButtonText">Actualizar</string>
     <string name="deleteButtonText">Eliminar</string>
     <string name="createViewTitle">Registro nuevo</string>
+    <string name="id">Id</string>
 </resources>

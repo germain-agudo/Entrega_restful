@@ -39,7 +39,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="id"
+                    android:text="@string/id"
                     android:textSize="10.5dp"
                     android:textStyle="bold"
                     android:typeface="normal" />
@@ -50,7 +50,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="numero de control"
+                    android:text="@string/addDescripcionPlaceholder"
                     android:textSize="10.5dp"
                     android:textStyle="bold"
                     android:typeface="normal" />
@@ -61,7 +61,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="nombre"
+                    android:text="@string/addCategoriaPlaceholder"
                     android:textSize="10.5dp"
                     android:textStyle="bold"
                     android:typeface="normal" />
@@ -72,7 +72,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="carrera"
+                    android:text="@string/addPrecioUnitarioPlaceholder"
                     android:textSize="10.5dp"
                     android:textStyle="bold"
                     android:typeface="normal" />
@@ -83,7 +83,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="semestre"
+                    android:text="@string/addExistenciaPlaceholder"
                     android:textSize="10.5dp"
                     android:textStyle="bold"
                     android:typeface="normal" />
@@ -102,7 +102,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="mostrar_id"
+                    android:text="@string/id"
                     android:textSize="10.5dp"
                     android:typeface="normal" />
 
@@ -112,7 +112,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="mostrar_numero_control"
+                    android:text="@string/addDescripcionPlaceholder"
                     android:textSize="10.5dp"
                     android:typeface="normal" />
 
@@ -122,7 +122,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="mostrar_nombre"
+                    android:text="@string/addCategoriaPlaceholder"
                     android:textSize="10.5dp"
                     android:typeface="normal" />
 
@@ -132,7 +132,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="mostrar_carrera"
+                    android:text="@string/addPrecioUnitarioPlaceholder"
                     android:textSize="10.5dp"
                     android:typeface="normal" />
 
@@ -142,7 +142,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/aref_ruqaa"
-                    android:text="mostrar_semestre"
+                    android:text="@string/addExistenciaPlaceholder"
                     android:textSize="10.5dp"
                     android:typeface="normal" />
 
